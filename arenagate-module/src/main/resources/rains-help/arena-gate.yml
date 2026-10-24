@@ -11,7 +11,7 @@ permission: rainsarenagate.use
 aliases: [pvp, duel, duels, fight, sumo, waves, mobwaves, queue, invite]
 keywords: [arena, pvp, mob, wave, bo3, kit, fighting, challenge, 2v2, ffa, naval]
 commands: [arena, pvp]
-related: [arena-stakes]
+related: [arena-gate-stakes]
 sections:
   - question: How do I get to the arena?
     title: Going there
@@ -48,4 +48,4 @@ sections:
   - question: Does my stuff come with me?
     title: Your belongings
     text: |
-      No — your inventory, XP and health stay here untouched; the arena has its own inventories and kits. If you want to fight with what you own, that is a copy: see {topic:arena-stakes}.
+      No — your inventory, XP and health stay here untouched; the arena has its own inventories and kits. If you want to fight with what you own, that is a copy: see {topic:arena-gate-stakes}.
