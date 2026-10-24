@@ -1,0 +1,51 @@
+id: arena-gate
+title: The Arena
+summary: Off to the arena server for duels, sumo, queues and mob waves — and how to invite somebody from here.
+intro: |
+  Fighting is done in the arena, not on your doorstep. {if:arenagate:warmup-seconds > 0}I will wave you off after a short stand-still, and{else}I will send you off at once, and{/if} everything you own stays safely here. Mind the door on the way out.
+icon: IRON_SWORD
+category: Games
+order: 30
+module: arenagate
+permission: rainsarenagate.use
+aliases: [pvp, duel, duels, fight, sumo, waves, mobwaves, queue, invite]
+keywords: [arena, pvp, mob, wave, bo3, kit, fighting, challenge, 2v2, ffa, naval]
+commands: [arena, pvp]
+related: [arena-stakes]
+sections:
+  - question: How do I get to the arena?
+    title: Going there
+    text: |
+      Type {run:/arena}. The arena is its own server (<white>{setting:arenagate:arena-server}</white> on the proxy) — you land in its hub, with your own inventory over there, not the one you carry here.
+      {if:arenagate:warmup-seconds > 0}First you stand still for <white>{setting:arenagate:warmup-seconds|seconds}</white>. Moving, or being hurt, calls it off — nobody leaves a fight through the back door. Just type it again once things are quiet.{else}There is no waiting: you are sent straight away.{/if}
+      Everybody else is told that you "went to the arena", and again when you are back. If the arena cannot be reached, I say so instead of losing you.
+  - question: Can I go to a fight directly?
+    title: Straight to the queue
+    text: |
+      Yes: {cmd:/arena queue [mode] [kit] [stake]} — or {cmd:/pvp queue [mode] [kit] [stake]}, same thing — takes you to the arena and puts you straight into its queue. The words can come in any order: a mode name is the mode, a plain number is the stake, <white>bo3</white> means best of three, <white>own</white> means your own gear, anything else is taken for a kit. {cmd:/arena queue} on its own is a duel with the default kit.
+  - question: What modes are there?
+    title: Modes
+    text: |
+      <white>duel</white> (one against one), <white>sumo</white> (no damage — pushed out of the ring is out), <white>2v2</white> and <white>3v3</white> teams, <white>ffa</white> (free for all, last one standing), <white>naval</white> (boats on a flooded pit), <white>mounted</white> (pigs, spear in hand), <white>horse</white> (horseback with spear and shield) and <white>waves</white> (together against mobs). Guild modes are started from inside the arena.
+      Teams and free-for-all come from the queue only; invites are for duels, sumo, naval, mounted, horse and mob runs.
+  - question: How do I run a mob-wave gauntlet?
+    title: Mob waves
+    text: |
+      {cmd:/arena wave [preset] [kit]} sends you over to fight waves of mobs with the kit you name. A preset sets the mobs and how many waves: <white>warmup</white>, <white>undead</white>, <white>nether</white>, <white>illagers</white>, <white>bossrush</white> and <white>endless</white> (no end, only dignity). No preset means <white>warmup</white>. A friend can join you with {cmd:/pvp invite <player> waves}.
+  - question: How do I challenge somebody?
+    title: Inviting
+    text: |
+      {cmd:/pvp invite <player> [mode] [kit|own] [stake] [bo3]} — for example {cmd:/pvp invite Steve sumo} or {cmd:/pvp invite Steve duel netherite 500 bo3}. The player may be here or already in the arena. Somebody on a third server (the hub, say) gets a polite "go and fetch them first" from me.
+      They have <white>one minute</white> to answer with the buttons in chat, or with {cmd:/pvp accept [id]} and {cmd:/pvp deny [id]}. If several invites are open, name the id — I do not guess which one you mean. Take yours back with {cmd:/pvp cancel [id]} or the <red>[Cancel]</red> button. When they say yes, you are both taken over (the wait-and-stand-still applies to you too).
+  - question: Who may use the arena?
+    title: Permission
+    text: |
+      Everybody who holds <white>rainsarenagate.use</white> — by default everybody. {if:@perm:rainsarenagate.use}You do. Off you go.{/if}
+  - question: Why is the arena unreachable?
+    title: Unreachable
+    text: |
+      The arena server is down, restarting, or not linked to this one. Wait a moment and try again. The hub of the arena also tells this server when the other one has started, so people who were waiting there during a restart are brought back on their own.
+  - question: Does my stuff come with me?
+    title: Your belongings
+    text: |
+      No — your inventory, XP and health stay here untouched; the arena has its own inventories and kits. If you want to fight with what you own, that is a copy: see {topic:arena-stakes}.

@@ -1,0 +1,38 @@
+id: arena-stakes
+title: Stakes & own gear
+summary: Betting on an arena fight, how the pot is paid out, and fighting with a copy of your own gear.
+intro: |
+  A fight is more interesting when somebody has something to lose. I hold the money; the arena settles who gets it. I am very honest about this, mostly because I am audited.
+icon: GOLD_INGOT
+category: Games
+order: 31
+module: arenagate
+permission: rainsarenagate.use
+aliases: [stake, stakes, bet, wager, pot, owngear]
+keywords: [money, escrow, pot, winnings, refund, gear, copy, own]
+related: [arena-gate]
+sections:
+  - question: How do I bet on a fight?
+    title: Staking
+    text: |
+      Add a number to a queue or an invite: {cmd:/pvp invite <player> duel 500} or {cmd:/pvp queue duel 500}. Each side pays that amount (500 would be {money:500} on this server); the sum is the pot. If somebody cannot pay, nothing is taken and the fight is off — whoever was already charged is refunded at once.
+  - question: Who holds the money?
+    title: Escrow
+    text: |
+      This server, where your balance is. The stake leaves your balance when the fight begins and waits in escrow until the arena says how it ended. I only pay out what was held for that fight, never more.
+  - question: Who gets the pot?
+    title: Winnings
+    text: |
+      The winner(s) take it. {if:arenagate:house-cut-percent > 0}The house keeps <white>{setting:arenagate:house-cut-percent|percent}</white> of the winnings; that money leaves the economy.{else}There is no house cut: the winner takes it all.{/if} If the fight pays only part of the pot, the rest is shared back to whoever put it in.
+  - question: What if the fight never ends properly?
+    title: Refunds
+    text: |
+      Stakes are given back if the fight is called off, if it cannot be settled, or if the arena never reports a result within two hours. A money movement is never repeated automatically, so it cannot be paid twice. If the economy cannot be reached, nothing is settled until it can.
+  - question: Can I be charged without agreeing?
+    title: Consent
+    text: |
+      No. Your stake is taken only up to what <i>you</i> typed or accepted yourself — in a queue command, an invite, or an accept — and each agreement is used up by one stake and lapses after fifteen minutes. The arena naming you is not enough.
+  - question: What does "own" gear mean?
+    title: Own gear
+    text: |
+      Put <white>own</white> where the kit goes: {cmd:/pvp queue duel own}. You then fight with a <i>copy</i> of what you carry here (hotbar, backpack, armour and off hand). Nothing is taken from you here and nothing comes back from the fight — the copy is thrown away, so you never lose a netherite sword to a lucky stranger. Like a stake, the permission to copy your gear is yours alone and is used up once.
