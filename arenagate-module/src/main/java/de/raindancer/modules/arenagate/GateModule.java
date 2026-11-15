@@ -50,7 +50,6 @@ public final class GateModule implements FlexModule {
         SettingsStore<GateSettings> settings = context.settings(GateSettings.class, GateSettings.DEFAULTS);
         context.core().messages().defineFrom(GateModule.class.getResourceAsStream("messages.yml"),
                 context.chat().brand()::chatPrefix);
-        context.core().messages().seriousFrom(GateModule.class.getResourceAsStream("messages-serious.yml"));
         PermissionNodes.register(context.plugin().getServer());
         ProxyTransfer.register(context.plugin());
 
