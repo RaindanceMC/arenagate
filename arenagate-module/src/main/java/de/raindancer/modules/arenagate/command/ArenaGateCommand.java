@@ -71,6 +71,6 @@ public final class ArenaGateCommand implements IGateCommand {
 
     @Override
     public String describe() {
-        return "going to the arena server — the hub, a mob run, or the queue";
+        return "going to the arena server: the hub, a mob run, or the queue";
     }
 }

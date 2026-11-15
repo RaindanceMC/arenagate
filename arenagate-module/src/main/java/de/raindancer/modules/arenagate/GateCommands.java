@@ -15,7 +15,7 @@ public final class GateCommands {
 
     public static List<ModuleCommand> declared() {
         return List.of(
-                ModuleCommand.of("arena", "Go to the arena server — PvP, kits, mob waves",
+                ModuleCommand.of("arena", "Go to the arena server for PvP, kits and mob waves",
                                 new ArenaGateCommand(GateCommands::require))
                         .taking("wave [preset] [kit]", "queue [mode] [kit] [stake]"),
                 ModuleCommand.of("pvp", "Ask somebody to an arena fight, answer, or queue for one",
