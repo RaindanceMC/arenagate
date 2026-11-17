@@ -15,7 +15,7 @@ sections:
   - question: How do I bet on a fight?
     title: Staking
     text: |
-      Add a number to a queue or an invite: {cmd:/pvp invite <player> duel 500} or {cmd:/pvp queue duel 500}. Each side pays that amount (500 would be {money:500} on this server); the sum is the pot. If somebody cannot pay, nothing is taken and the fight is off and whoever was already charged is refunded at once.
+      Add a number to a queue or an invite: {cmd:/duel invite <player> duel 500} or {cmd:/duel queue duel 500}. Each side pays that amount (500 would be {money:500} on this server); the sum is the pot. If somebody cannot pay, nothing is taken and the fight is off and whoever was already charged is refunded at once.
   - question: Who holds the money?
     title: Escrow
     text: |
@@ -35,4 +35,4 @@ sections:
   - question: What does "own" gear mean?
     title: Own gear
     text: |
-      Put <white>own</white> where the kit goes: {cmd:/pvp queue duel own}. You then fight with a <i>copy</i> of what you carry here (hotbar, backpack, armour and off hand). Nothing is taken from you here and nothing comes back from the fight. The copy is thrown away, so you cannot lose your gear. Like a stake, the permission to copy your gear is yours alone and is used up once.
+      Put <white>own</white> where the kit goes: {cmd:/duel queue duel own}. You then fight with a <i>copy</i> of what you carry here (hotbar, backpack, armour and off hand). Nothing is taken from you here and nothing comes back from the fight. The copy is thrown away, so you cannot lose your gear. Like a stake, the permission to copy your gear is yours alone and is used up once.

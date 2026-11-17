@@ -8,7 +8,7 @@ import java.util.function.LongSupplier;
 /**
  * What a player agreed to: a stake of up to so much, a fight in their own gear. Asked before a stake is taken or a copy of
  * their gear handed out, and used up by it — so nothing is taken from anybody, and nobody's inventory read out, merely
- * because the arena named them. Agreements come from what a player does here ({@code /pvp queue}, an invite, an accept)
+ * because the arena named them. Agreements come from what a player does here ({@code /duel queue}, an invite, an accept)
  * or from the arena as they queue or accept there; each lasts {@link #LIFETIME}.
  */
 public final class GateConsents {

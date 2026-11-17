@@ -18,17 +18,17 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 /**
- * {@code /pvp} on the survival server: {@code invite <player> [duel|sumo|waves] [kit|own] [stake] [bo3]} — somebody here
+ * {@code /duel} on the survival server: {@code invite <player> [duel|sumo|waves] [kit|own] [stake] [bo3]} — somebody here
  * or somebody in the arena — {@code accept [id]}, {@code deny [id]}, and {@code queue [mode] [kit] [stake]}, which goes
  * to the arena and straight into its queue.
  */
-public final class PvpGateCommand implements IGateCommand {
+public final class DuelGateCommand implements IGateCommand {
 
     private static final List<String> SUBCOMMANDS = List.of("invite", "accept", "deny", "cancel", "queue");
 
     private final Supplier<GateServices> services;
 
-    public PvpGateCommand(Supplier<GateServices> services) {
+    public DuelGateCommand(Supplier<GateServices> services) {
         this.services = services;
     }
 
@@ -47,13 +47,13 @@ public final class PvpGateCommand implements IGateCommand {
         switch (what) {
             case "invite" -> {
                 if (args.length < 2) {
-                    live.messages().send(player, "arenagate.pvp.usage");
+                    live.messages().send(player, "arenagate.duel.usage");
                     return;
                 }
                 MatchSpec spec = SpecArgs.parse(args, 2, Mode.DUEL);
                 if (spec.mode() != Mode.DUEL && spec.mode() != Mode.SUMO && spec.mode() != Mode.WAVES
                         && spec.mode() != Mode.NAVAL && spec.mode() != Mode.MOUNTED && spec.mode() != Mode.HORSEBACK) {
-                    live.messages().send(player, "arenagate.pvp.only-duels");
+                    live.messages().send(player, "arenagate.duel.only-duels");
                     return;
                 }
                 live.network().invite(player, args[1], spec);
@@ -70,7 +70,7 @@ public final class PvpGateCommand implements IGateCommand {
                 intent.put("kind", "QUEUE");
                 live.gate().go(player, intent);
             }
-            default -> live.messages().send(player, "arenagate.pvp.usage");
+            default -> live.messages().send(player, "arenagate.duel.usage");
         }
     }
 

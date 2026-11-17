@@ -38,7 +38,8 @@ class GateTest {
     void commands() {
         GateCommands.stopped();
 
-        assertThat(GateCommands.declared()).extracting(ModuleCommand::name).containsExactly("arena", "pvp");
+        assertThat(GateCommands.declared()).extracting(ModuleCommand::name).containsExactly("arena", "duel");
+        assertThat(GateCommands.declared()).allSatisfy(command -> assertThat(command.aliases()).doesNotContain("pvp"));
         for (ModuleCommand command : GateCommands.declared()) {
             assertThatThrownBy(() -> command.handler().execute(null, new String[0]))
                     .isInstanceOf(IllegalStateException.class).hasMessageContaining("not running");

@@ -310,7 +310,7 @@ public final class GateNetwork {
         }, () -> messages.send(player, "arenagate.invite.none"));
     }
 
-    /** {@code /pvp invite} here: somebody here gets the buttons; somebody in the arena is asked over there. */
+    /** {@code /duel invite} here: somebody here gets the buttons; somebody in the arena is asked over there. */
     public void invite(Player from, String targetName, MatchSpec spec) {
         consents.agree(from.getUniqueId(), spec.stake(), spec.isOwnGear());
         Player target = server.getPlayerExact(targetName);

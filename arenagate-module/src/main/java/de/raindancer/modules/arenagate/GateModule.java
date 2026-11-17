@@ -27,14 +27,14 @@ import de.raindancer.modules.arenagate.util.PermissionNodes;
 import java.util.List;
 
 /**
- * The survival server's side of the arena: {@code /arena} and {@code /pvp}, stakes held in escrow here where the money
+ * The survival server's side of the arena: {@code /arena} and {@code /duel}, stakes held in escrow here where the money
  * is, copies of gear for fights in one's own, and the link handlers that make invites work across the two servers.
  * Shipped through the standard wrapper this is {@code RainsArenaGate}; the arena itself is {@code RainsArena}.
  */
 public final class GateModule implements FlexModule {
 
-    private static final ModuleInfo INFO = ModuleInfo.of("arenagate", "Arena Gate", "0.9.0")
-            .describedAs("/arena and /pvp: off to the arena server, invites across both servers, stakes held here.")
+    private static final ModuleInfo INFO = ModuleInfo.of("arenagate", "Arena Gate", "0.10.0")
+            .describedAs("/arena and /duel: off to the arena server, invites across both servers, stakes held here.")
             .by("Raindancer118");
 
     private GateNetwork network;

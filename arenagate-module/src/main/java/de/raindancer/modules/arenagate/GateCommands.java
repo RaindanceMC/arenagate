@@ -18,8 +18,8 @@ public final class GateCommands {
                 ModuleCommand.of("arena", "Go to the arena server for PvP, kits and mob waves",
                                 new ArenaGateCommand(GateCommands::require))
                         .taking("wave [preset] [kit]", "queue [mode] [kit] [stake]"),
-                ModuleCommand.of("pvp", "Ask somebody to an arena fight, answer, or queue for one",
-                                new de.raindancer.modules.arenagate.command.PvpGateCommand(GateCommands::require))
+                ModuleCommand.of("duel", "Ask somebody to an arena fight, answer, or queue for one",
+                                new de.raindancer.modules.arenagate.command.DuelGateCommand(GateCommands::require))
                         .taking("invite <player> [duel|sumo|waves] [kit|own] [stake] [bo3]", "accept [id]", "deny [id]",
                                 "queue [mode] [kit] [stake]"));
     }

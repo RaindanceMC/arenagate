@@ -10,7 +10,7 @@ module: arenagate
 permission: rainsarenagate.use
 aliases: [pvp, duel, duels, fight, sumo, waves, mobwaves, queue, invite]
 keywords: [arena, pvp, mob, wave, bo3, kit, fighting, challenge, 2v2, ffa, naval]
-commands: [arena, pvp]
+commands: [arena, duel]
 related: [arena-gate-stakes]
 sections:
   - question: How do I get to the arena?
@@ -22,7 +22,7 @@ sections:
   - question: Can I go to a fight directly?
     title: Straight to the queue
     text: |
-      Yes. {cmd:/arena queue [mode] [kit] [stake]} (or {cmd:/pvp queue [mode] [kit] [stake]}) takes you to the arena and puts you straight into its queue. The words can come in any order: a mode name is the mode, a plain number is the stake, <white>bo3</white> means best of three, <white>own</white> means your own gear, anything else is taken for a kit. {cmd:/arena queue} on its own is a duel with the default kit.
+      Yes. {cmd:/arena queue [mode] [kit] [stake]} (or {cmd:/duel queue [mode] [kit] [stake]}) takes you to the arena and puts you straight into its queue. The words can come in any order: a mode name is the mode, a plain number is the stake, <white>bo3</white> means best of three, <white>own</white> means your own gear, anything else is taken for a kit. {cmd:/arena queue} on its own is a duel with the default kit.
   - question: What modes are there?
     title: Modes
     text: |
@@ -31,12 +31,12 @@ sections:
   - question: How do I run a mob-wave gauntlet?
     title: Mob waves
     text: |
-      {cmd:/arena wave [preset] [kit]} sends you over to fight waves of mobs with the kit you name. A preset sets the mobs and how many waves: <white>warmup</white>, <white>undead</white>, <white>nether</white>, <white>illagers</white>, <white>bossrush</white> and <white>endless</white> (no end). No preset means <white>warmup</white>. A friend can join you with {cmd:/pvp invite <player> waves}.
+      {cmd:/arena wave [preset] [kit]} sends you over to fight waves of mobs with the kit you name. A preset sets the mobs and how many waves: <white>warmup</white>, <white>undead</white>, <white>nether</white>, <white>illagers</white>, <white>bossrush</white> and <white>endless</white> (no end). No preset means <white>warmup</white>. A friend can join you with {cmd:/duel invite <player> waves}.
   - question: How do I challenge somebody?
     title: Inviting
     text: |
-      {cmd:/pvp invite <player> [mode] [kit|own] [stake] [bo3]}, for example {cmd:/pvp invite Steve sumo} or {cmd:/pvp invite Steve duel netherite 500 bo3}. The player may be here or already in the arena. Somebody on a third server (the hub, say) cannot be invited. Ask them to come over first.
-      They have <white>one minute</white> to answer with the buttons in chat, or with {cmd:/pvp accept [id]} and {cmd:/pvp deny [id]}. If several invites are open, name the id. Take yours back with {cmd:/pvp cancel [id]} or the <red>[Cancel]</red> button. When they say yes, you are both taken over (the stand-still applies to you too).
+      {cmd:/duel invite <player> [mode] [kit|own] [stake] [bo3]}, for example {cmd:/duel invite Steve sumo} or {cmd:/duel invite Steve duel netherite 500 bo3}. The player may be here or already in the arena. Somebody on a third server (the hub, say) cannot be invited. Ask them to come over first.
+      They have <white>one minute</white> to answer with the buttons in chat, or with {cmd:/duel accept [id]} and {cmd:/duel deny [id]}. If several invites are open, name the id. Take yours back with {cmd:/duel cancel [id]} or the <red>[Cancel]</red> button. When they say yes, you are both taken over (the stand-still applies to you too).
   - question: Who may use the arena?
     title: Permission
     text: |
